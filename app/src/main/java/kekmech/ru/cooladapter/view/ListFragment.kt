@@ -19,9 +19,24 @@ class ListFragment : Fragment(), ListFragmentView {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        App.instance.presenter<ListPresenter>()
-            .
+        App.instance
+            .presenter<ListPresenter>()
+            .onCreate(this)
         return inflater.inflate(R.layout.fragment_list, container, false)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        App.instance
+            .presenter<ListPresenter>()
+            .onResume(this)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        App.instance
+            .presenter<ListPresenter>()
+            .onPause()
     }
 
 
