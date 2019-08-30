@@ -2,7 +2,6 @@ package kekmech.ru.cooladapter.model
 
 import kekmech.ru.cooladapter.*
 import kekmech.ru.cooladapter.dto.Event
-import kekmech.ru.cooladapter.dto.Itemable
 import kekmech.ru.cooladapter.dto.Move
 import kekmech.ru.cooladapter.dto.Notice
 import kotlin.random.Random

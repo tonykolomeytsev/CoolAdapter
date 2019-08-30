@@ -10,7 +10,7 @@ import kekmech.ru.cooladapter.adapter.BaseViewHolder
 import kekmech.ru.cooladapter.dto.Move
 import java.text.SimpleDateFormat
 
-class MoveItem(private val move: Move) : BaseClickableItem<MoveItem.ViewHolder>() {
+class MoveItem(val move: Move) : BaseClickableItem<MoveItem.ViewHolder>() {
 
     override fun updateViewHolder(viewHolder: MoveItem.ViewHolder) {
         viewHolder.title.text = "from " + move.fromPlace + " to " + move.toPlace

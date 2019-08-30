@@ -11,7 +11,7 @@ import kekmech.ru.cooladapter.adapter.BaseViewHolder
 import kekmech.ru.cooladapter.dto.Event
 import java.text.SimpleDateFormat
 
-class EventItem(private val event: Event) : BaseClickableItem<EventItem.ViewHolder>() {
+class EventItem(val event: Event) : BaseClickableItem<EventItem.ViewHolder>() {
 
     override fun updateViewHolder(viewHolder: ViewHolder) {
         viewHolder.title.text = event.name

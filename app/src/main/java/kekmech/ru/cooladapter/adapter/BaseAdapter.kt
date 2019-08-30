@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kekmech.ru.cooladapter.dto.Itemable
 import java.lang.IllegalStateException
 import java.util.*
 import kotlin.reflect.KClass

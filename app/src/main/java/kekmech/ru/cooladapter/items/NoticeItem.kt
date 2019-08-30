@@ -11,7 +11,7 @@ import kekmech.ru.cooladapter.dto.Notice
 import java.text.SimpleDateFormat
 import java.time.format.DateTimeFormatter
 
-class NoticeItem(private val notice: Notice) : BaseClickableItem<NoticeItem.ViewHolder>() {
+class NoticeItem(val notice: Notice) : BaseClickableItem<NoticeItem.ViewHolder>() {
 
     override fun updateViewHolder(viewHolder: ViewHolder) {
         val date = SimpleDateFormat("dd MMMM").format(notice.flightDate)
