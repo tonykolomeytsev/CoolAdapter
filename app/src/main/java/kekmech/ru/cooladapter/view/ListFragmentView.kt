@@ -1,3 +1,7 @@
 package kekmech.ru.cooladapter.view
 
-interface ListFragmentView
+import kekmech.ru.cooladapter.adapter.BaseAdapter
+
+interface ListFragmentView {
+    fun updateAdapter(adapter: BaseAdapter)
+}

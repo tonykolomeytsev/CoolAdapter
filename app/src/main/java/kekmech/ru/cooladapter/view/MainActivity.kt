@@ -9,6 +9,9 @@ import kekmech.ru.cooladapter.presenter.MainPresenter
 
 class MainActivity : AppCompatActivity(), MainActivityView {
 
+    override val currentFragment: Fragment?
+        get() = supportFragmentManager.findFragmentById(R.id.fragmentContainer)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,11 +35,19 @@ class MainActivity : AppCompatActivity(), MainActivityView {
     }
 
     override fun replaceFragment(fragment: Fragment) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .commit()
+
     }
 
     override fun pushFragment(fragment: Fragment) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.fragmentContainer, fragment)
+            .addToBackStack(fragment.javaClass.simpleName)
+            .commit()
     }
 
     override fun popBackFragment() {
