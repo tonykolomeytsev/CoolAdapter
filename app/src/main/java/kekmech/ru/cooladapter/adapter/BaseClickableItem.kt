@@ -7,17 +7,15 @@ import kotlin.collections.any
 /**
  * Created by Kolomeytsev Anton
  */
-abstract class BaseClickableItem<T : BaseViewHolder>(
-    private var itemId: String
-): BaseItem<T>() {
+abstract class BaseClickableItem<T : BaseViewHolder>(): BaseItem<T>() {
 
-    var clickListener: (String) -> Unit = {}
+    var clickListener: (BaseItem<*>) -> Unit = {}
 
     override fun updateViewHolderNative(viewHolder: BaseViewHolder) {
         super.updateViewHolderNative(viewHolder)
         Log.d("VIEW HOLDER", "update")
         viewHolder.itemView.setOnClickListener {
-            view -> view.postOnAnimation { clickListener(itemId) }
+            view -> view.postOnAnimation { clickListener(this) }
         }
     }
 }

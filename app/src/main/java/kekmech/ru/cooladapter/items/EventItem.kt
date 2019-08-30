@@ -1,6 +1,7 @@
 package kekmech.ru.cooladapter.items
 
 import android.view.View
+import android.widget.TextClock
 import android.widget.TextView
 import kekmech.ru.cooladapter.R
 import kekmech.ru.cooladapter.adapter.BaseClickableItem
@@ -16,12 +17,14 @@ class EventItem(private val event: Event) : BaseClickableItem<EventItem.ViewHold
         viewHolder.title.text = event.name
         viewHolder.startTime.text = SimpleDateFormat("hh:mm").format(event.startTime)
         viewHolder.endTime.text = SimpleDateFormat("hh:mm").format(event.endTime)
+        viewHolder.description.text = listOf("Lol", "kek", "Pew-pew", "Дратути").random()
     }
 
     class ViewHolder(itemView: View) : BaseViewHolder(itemView) {
         val title by bind<TextView>(R.id.textViewCoupleName)
         val startTime by bind<TextView>(R.id.textViewCoupleTimeStart)
         val endTime by bind<TextView>(R.id.textViewCoupleTimeEnd)
+        val description by bind<TextView>(R.id.textViewCouplePlace)
         override fun onCreateView(view: View) = Unit
     }
 
